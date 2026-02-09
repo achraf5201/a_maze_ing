@@ -203,6 +203,11 @@ class MazeGenerator:
             [False for _ in range(self.width)] for _ in range(self.height)]
         if self.height >= 12 and self.width >= 11:
             self.generate_42(param["EXIT"], param["ENTRY"])
+        else:
+            print(
+                "\033[91mMaze size is too small for 42 format: "
+                "minimum required is height >= 12 and width >= 11\033[0m\n"
+            )
         self.dfs_algo(param["ENTRY"][0], param["ENTRY"][1])
 
     def main_generator(
